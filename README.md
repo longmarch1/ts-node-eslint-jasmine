@@ -7,8 +7,12 @@ Set up repo config is time-consuming and this script is helping you set up a typ
 It does the following for you:
 - add .editorconfig
 - add .gitignore
-- add eslintrc
+- add .eslintrc
 - add jasmine.json
+- install typescript
+- install eslint
+- install jasmine
+- add example.ts and spec/example.t.ts
 
 
 # Instruction
