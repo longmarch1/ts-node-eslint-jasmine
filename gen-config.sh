@@ -1,11 +1,11 @@
 repo="ts-node-eslint-jasmine"
 
-copy_file () {
+copy_file() {
     file=$1
     echo "copy" ${file} "..."
     rm -f ${file}
     touch ${file}
-    cat ${repo}/${file} >> ${file}
+    cat ${repo}/${file} >>${file}
 }
 
 echo "clone" ${repo} "..."
@@ -17,43 +17,25 @@ copy_file ".editorconfig"
 # .gitignore
 copy_file ".gitignore"
 
-# npm create package.json
-echo "init package.json..."
-npm init --yes
-
-# setup typescript
-echo "install typescript..."
-npm install --save-dev typescript
-npx tsc --init
-
-# setup eslint
-echo "install eslint..."
-npm install --save-dev eslint eslint-config-airbnb-base
-npm install --save-dev eslint-plugin-import eslint-plugin-jasmine
-
 # setup .eslintrc
 copy_file ".eslintrc..."
 
-# setup jasmine
-echo "install jasmine..."
-npm install --save-dev jasmine @types/jasmine
-npm install --save-dev ts-node jasmine-ts
-npm install --save-dev jasmine-spec-reporter
-
 # jasmine.json
-copy_file "jasmine.json"
-
-# add example.ts and example.t.ts
-copy_file "example.ts"
-mkdir "spec";
+mkdir "spec"
+mkdir "spec/helpers"
+mkdir "spec/support"
+copy_file "spec/helpers/console_reporter_helper.js"
+copy_file "spec/support/jasmine.json"
 copy_file "spec/example.t.ts"
+
+# add example.ts
+copy_file "example.ts"
+
+# install
+npm i --save-dev
 
 # Remove git repo
 rm -rf ${repo}
 
-echo ""
-echo "[final step] add the following script to package.json manually."
-echo ""
-echo "\"test\": \"jasmine-ts --config=jasmine.json\""
 echo ""
 echo "run \"npm test\" to see unit test result"

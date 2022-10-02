@@ -1,10 +1,7 @@
-import "jasmine";
-import {
-    once, onceAndAfter, thisManyTimes, alternator,
-} from "../example";
+import { once, onceAndAfter, thisManyTimes, alternator } from "../example";
 
 describe("Example", () => {
-    let foo : any;
+    let foo: any;
     const f1 = () => {};
     const f2 = () => {};
 
