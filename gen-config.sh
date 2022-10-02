@@ -32,7 +32,7 @@ npm install --save-dev eslint eslint-config-airbnb-base
 npm install --save-dev eslint-plugin-import eslint-plugin-jasmine
 
 # setup .eslintrc
-copy_file ".eslintrc..."
+copy_file ".eslintrc"
 
 # setup jasmine
 echo "install jasmine..."
