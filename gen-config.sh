@@ -18,7 +18,7 @@ copy_file ".editorconfig"
 copy_file ".gitignore"
 
 # setup .eslintrc
-copy_file ".eslintrc..."
+copy_file ".eslintrc"
 
 # jasmine.json
 mkdir "spec"
