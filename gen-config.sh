@@ -20,6 +20,12 @@ copy_file ".gitignore"
 # setup .eslintrc
 copy_file ".eslintrc"
 
+# setup tsconfig.json
+copy_file "tsconfig.json"
+
+# setup package.json
+copy_file "package.json"
+
 # jasmine.json
 mkdir "spec"
 mkdir "spec/helpers"
@@ -31,11 +37,11 @@ copy_file "spec/example.t.ts"
 # add example.ts
 copy_file "example.ts"
 
-# install
-npm i --save-dev
-
 # Remove git repo
 rm -rf ${repo}
+
+# install
+npm i
 
 echo ""
 echo "run \"npm test\" to see unit test result"
